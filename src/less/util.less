@@ -1,0 +1,120 @@
+.width-auto() {
+	width: auto;
+	display: table;
+}
+
+.border-box() {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+.font(@size, @color, @spacing, @style, @weight) {
+	font-size: unit(@size, px);
+	font-style: @style;
+	font-weight: @weight;
+	letter-spacing: unit(@spacing ,px);
+	color: @color;
+}
+
+.fullSize() {
+	width: 100%;
+	height: 100%;
+}
+
+.widthAuto() {
+	width: auto;
+	display: table;
+}
+
+.square(@val) {
+	width: unit(@val, px);
+	height: unit(@val, px);
+}
+
+.centerObj(@val) {
+  	@mid: -(@val / 2);
+	position: absolute;
+	top: 50%; left: 50%;
+	margin: unit(@mid, px) 0 0 unit(@mid, px);
+}
+
+.centerObj(@w, @h) {
+  	@midW: -(@w / 2);
+  	@midH: -(@h / 2);
+	position: absolute;
+	top: 50%; left: 50%;
+	margin: unit(@midH, px) 0 0 unit(@midW, px);
+}
+
+
+.bg(@src; @posX; @posY) when (iskeyword(@posX, @posY))  {
+	background: url(@src) no-repeat @posX @posY;
+}
+.bg(@src; @posX; @posY) when (isnumber(@posX, @posY)) {
+	background: url(@src) no-repeat unit(@posX, px) unit(@posY, px);
+}
+
+.bgcover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.gradient(@direction, @color1, @color2) {
+   background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, @color1),
+		color-stop(1, @color2)
+	);
+	background-image: -o-linear-gradient(@direction, @color1, @color2);
+	background-image: -moz-linear-gradient(@direction, @color1, @color2);
+	background-image: -webkit-linear-gradient(@direction, @color1, @color2);
+	background-image: -ms-linear-gradient(@direction, @color1, @color2);
+	background-image: linear-gradient(to @direction, @color1, @color2);
+}
+
+.transitionDuration(@val) {
+	@ms: unit(@val, ms);
+	transition-duration: @ms;
+            -webkit-transition-duration: @ms;
+            -moz-transition-duration: @ms;
+            -o-transition-duration: @ms;
+}
+
+.transitionDelay(@val) {
+	transition-delay: unit(@val, s);
+	-webkit-transition-delay: unit(@val, s);
+	-moz-transition-delay: unit(@val, s);
+	-o-transition-delay: unit(@val, s);
+}
+
+.easeoutexpo() {
+	 -webkit-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+   -moz-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    -ms-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+     -o-transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+        transition: all 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+
+-webkit-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+    -ms-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+     -o-transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); 
+        transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
+}
+
+.sine() {
+	-webkit-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+   -moz-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -o-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+
+-webkit-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+   -moz-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -o-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+}
