@@ -1,3 +1,3 @@
 # README #
 
-Acessar maicol-dg.github.io
+Acessar http://maicol-dg.github.io
