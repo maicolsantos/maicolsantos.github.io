@@ -205,7 +205,7 @@ $('document').ready(function () {
 
 		$.ajax({
 			type: "POST",
-			url: "../envia.php",
+			url: "envia.php",
 			data: dados,
 			success: function( data )
 			{
