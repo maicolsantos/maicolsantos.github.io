@@ -1,6 +1,6 @@
 $('document').ready(function () {
 
-	var content = $('#content'),
+	var content = $('.content'),
 		lines = content.find(".lines"),
 		info = content.find('.info'),
 		worksBtn = $('.works-btn'),
