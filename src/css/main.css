@@ -331,6 +331,9 @@ body {
 .perfil .maicol .campo-slide .slider .banner {
   margin-top: 41px;
 }
+.perfil .maicol .campo-slide .slider .banner img {
+  width: 80%;
+}
 .perfil .maicol .campo-slide .slider .rsBullets {
   margin: auto;
   width: 90px;
@@ -555,7 +558,7 @@ body {
     width: 100%;
     left: 0;
     margin-left: 0;
-    padding: 0 10px;
+    padding: 0;
     margin-bottom: 0;
   }
   .perfil .maicol .campo-slide,
@@ -563,16 +566,21 @@ body {
   .perfil .maicol .blog {
     float: inherit;
   }
-  .perfil .maicol .campo-slide .slider,
   .perfil .maicol .side-perfil,
   .perfil .maicol .blog,
-  .perfil .maicol .hello .form .btn-enviar,
-  .perfil .maicol .campo-slide .slider .banner,
-  .perfil .maicol .campo-slide .slider .banner img {
+  .perfil .maicol .hello .form .btn-enviar {
     width: 100%;
   }
-  .rsOverflow {
-    width: 100%!important;
+  .perfil .maicol .side-perfil,
+  .perfil .maicol .campo-blog,
+  .perfil .maicol .hello {
+    padding: 0 10px;
+  }
+  .perfil .maicol .campo-slide .slider {
+    width: 100vw;
+  }
+  .perfil .maicol .campo-slide .slider .banner img {
+    width: 80%;
   }
   .perfil .maicol .side-perfil .linha {
     display: none;
