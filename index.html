@@ -7,7 +7,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Lato:300' rel='stylesheet' type='text/css'>
+
         <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+
         <link rel="stylesheet" href="src/css/normalize.min.css">
         <link rel="stylesheet" href="src/css/main.css">
 
@@ -16,15 +19,15 @@
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <![endif]--> 
 
         <div id="content">
 
-            <!-- <div class="works-btn">
+            <div class="works-btn">
                 <div class="line um"></div>
                 <div class="line dois"></div>
                 <div class="line tres"></div>
-            </div> -->
+            </div>
             
             <div class="lines">
                 <p>YOU MAY SAY</p>
@@ -37,16 +40,111 @@
                 <div class="link git"><a href="https://github.com/maicol-dg"></a></div>
                 <div class="link fb"><a href="https://www.facebook.com/maicol.santos.8"></a></div>
                 <div class="link mail">
-                    <div class="line"></div>
-                    <a href="mailto:contato@maicoldg.com.br">CONTATO@MAICOLDG.COM.BR</a>
+                    <div class="linec"></div>
+                    <a href="mailto:maicolcostaa8@gmail.com">MAICOLCOSTAA8@GMAIL.COM</a>
                 </div>
             </div>
 
         </div>
 
+
+
+        <div class="perfil">
+
+            <div class="bg-perfil"></div>
+
+
+            <div class="corpo-perfil">
+
+                <div class="maicol">
+                    <div class="logo-perfil">
+                        <img src="src/img/logo-perfil.png" alt="">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="content-perfil">
+                        <h2>Maicol santos</h2>
+                        <h3>Desenvolvedor FrontEnd</h3>
+                    </div>
+                    <div class="campo-slide">
+                        <div class="slider royalslider">
+                            
+                            <div class="banner">
+                                <img src="src/img/banner.png" alt="">
+                            </div>
+
+                            <div class="banner">
+                                <img src="src/img/banner.png" alt="">
+                            </div>
+
+                            <div class="banner">
+                                <img src="src/img/banner.png" alt="">
+                            </div>
+
+                        </div>
+                        <!-- <div class="prevs">
+                            <div class="nav-next">h</div>
+                            <div class="nav-prev">g</div>
+                        </div> -->
+                    </div>
+
+                    <div class="side-perfil">
+                        <h2>Skills</h2>
+                        <div class="linha"></div>
+                        <div class="clearfix"></div>
+
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                            <li>WordPress</li>
+                            <li>WooCommerce</li>
+                            <li>Responsivo</li>
+                            <li>Photoshop</li>
+                            <li>Illustrator</li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="hello">
+                        <h2>Mande um hello!</h2>
+                        <div class="linhas"></div>
+                        <div class="clearfix"></div>
+
+                        <form class="form" method="POST" action="">
+                            <input type="text" name="nome" required placeholder="Seu Nome">
+                            <input type="email" name="email" required placeholder="Seu Email">
+                            <textarea name="msg" id="" rows="4" required placeholder="Sua Mensagem"></textarea>
+                            <button class="btn-enviar"></button>
+                        </form>
+
+                    </div>
+
+                    <div class="blog">
+                        
+                        <img src="src/img/blog.png" alt="">
+
+                        <h2>It’s all going downhill</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum pariatur, maiores cupiditate, labore</p>
+                        <div class="clearfix"></div>
+
+                        <div class="redes">
+                            <li><a href="#">i</a>23</li>
+                            <li><a href="#">d</a>123</li>
+                            <li><a href="#">f</a>133</li>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+            
+        </div>
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="src/js/vendor/jquery.js"><\/script>')</script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
+        <script src="src/js/jquery.royalslider.min.js"></script>
         <script src="src/js/main.js"></script>
 
         <script>
@@ -60,9 +158,9 @@
 
         </script>
 
-        <script type='text/javascript'>//<![CDATA[
-        document.write("<script async src='//HOST:3000/browser-sync-client.1.3.5.js'><\/script>".replace(/HOST/g, location.hostname));
-        //]]></script>
+        <script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.7.0.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
+//]]></script>
 
     </body>
 </html>

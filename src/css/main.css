@@ -1,3 +1,42 @@
+@import "royalslider.css";
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?-9f40d');
+  src: url('../fonts/icomoon.eot?#iefix-9f40d') format('embedded-opentype'), url('../fonts/icomoon.woff?-9f40d') format('woff'), url('../fonts/icomoon.ttf?-9f40d') format('truetype'), url('../fonts/icomoon.svg?-9f40d#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-ok:before {
+  content: "\61";
+}
+.icon-chevron-thin-left:before {
+  content: "\67";
+}
+.icon-chevron-thin-right:before {
+  content: "\68";
+}
+.icon-heart:before {
+  content: "\69";
+}
+.icon-facebook:before {
+  content: "\64";
+}
+.icon-github4:before {
+  content: "\66";
+}
 html,
 button,
 input,
@@ -68,6 +107,7 @@ a {
   -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   /* easeOutExpo */
+  outline: none;
 }
 a.full {
   width: 100%;
@@ -122,6 +162,7 @@ body {
   top: 100px;
   right: 100px;
   cursor: pointer;
+  z-index: 99999;
 }
 #content .works-btn .line {
   width: 100%;
@@ -204,7 +245,7 @@ body {
   width: 220px;
   margin: 7px 0 0 5px;
 }
-#content .info .link.mail .line {
+#content .info .link.mail .linec {
   width: 0%;
   height: 1px;
   background: #ffcd40;
@@ -236,6 +277,255 @@ body {
 #content .info .link a:hover {
   color: #cccccc;
 }
+.perfil {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.perfil .bg-perfil {
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.perfil .corpo-perfil {
+  height: 100vh;
+  overflow-y: scroll;
+}
+.perfil .maicol {
+  background: #ffffff url(../img/bg-perfil.png) no-repeat;
+  position: relative;
+  width: 794px;
+  margin-bottom: 50px;
+  left: 50%;
+  margin-left: -397px;
+  padding: 0 57px 50px;
+}
+.perfil .maicol .logo-perfil {
+  border-radius: 100%;
+  overflow: hidden;
+  width: 184px;
+  margin: auto;
+  position: relative;
+  top: 111px;
+}
+.perfil .maicol .content-perfil {
+  margin-top: 120px;
+  text-align: center;
+}
+.perfil .maicol .content-perfil h2 {
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  color: #4f4f4f;
+}
+.perfil .maicol .content-perfil h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #9d9d9d;
+}
+.perfil .maicol .campo-slide {
+  float: left;
+}
+.perfil .maicol .campo-slide .slider {
+  background: #e4e4e4;
+  height: 304px;
+  width: 453px;
+  text-align: center;
+  margin: 36px 0;
+}
+.perfil .maicol .campo-slide .slider .banner {
+  margin-top: 41px;
+}
+.perfil .maicol .campo-slide .slider .rsBullets {
+  margin: auto;
+  width: 90px;
+  position: relative;
+  bottom: 17px;
+}
+.perfil .maicol .campo-slide .slider .rsNavItem {
+  width: 10px;
+  height: 10px;
+  background: #9c9c9c;
+  float: left;
+  border-radius: 100%;
+  margin: 0 10px;
+}
+.perfil .maicol .campo-slide .slider .rsNavSelected {
+  background: #333;
+}
+.perfil .maicol .campo-slide .prevs {
+  width: 453px;
+  font-family: 'icomoon';
+  font-size: 45px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #9c9c9c;
+  position: absolute;
+  z-index: 1000;
+  cursor: pointer;
+  bottom: 175px;
+  left: 57px;
+  opacity: 0.5;
+}
+.perfil .maicol .campo-slide .prevs .nav-next {
+  position: absolute;
+  right: 0px;
+}
+.perfil .maicol .campo-slide .prevs .nav-prev {
+  position: absolute;
+  left: 0px;
+}
+.perfil .maicol .side-perfil {
+  width: 171px;
+  float: right;
+  margin: 36px 0;
+}
+.perfil .maicol .side-perfil h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  color: #4f4f4f;
+  float: left;
+}
+.perfil .maicol .side-perfil .linha {
+  width: 87px;
+  height: 1px;
+  background: #4f4f4f;
+  float: right;
+  position: relative;
+  top: 25px;
+}
+.perfil .maicol .side-perfil ul {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #9d9d9d;
+  font-size: 18px;
+}
+.perfil .maicol .side-perfil ul li {
+  margin-bottom: 5px;
+}
+.perfil .maicol .side-perfil ul li:before {
+  content: "\61";
+  font-family: 'icomoon';
+  color: #78b6a7;
+  margin-right: 10px;
+}
+.perfil .maicol .hello {
+  width: 285px;
+  float: left;
+}
+.perfil .maicol .hello h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  color: #4f4f4f;
+  float: left;
+}
+.perfil .maicol .hello .linhas {
+  width: 30px;
+  height: 1px;
+  background: #4f4f4f;
+  float: right;
+  position: relative;
+  top: 25px;
+}
+.perfil .maicol .hello .form {
+  float: left;
+}
+.perfil .maicol .hello .form input,
+.perfil .maicol .hello .form textarea {
+  border: none;
+  background: #e4e4e4;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 7px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #9d9d9d;
+  font-size: 18px;
+}
+.perfil .maicol .hello .form .btn-enviar {
+  float: right;
+  background: #ccc;
+  border: none;
+  color: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  border-radius: 4px;
+  padding: 7px 25px;
+  border-bottom: 3px solid #B1B1B1;
+}
+.perfil .maicol .hello .form .btn-enviar:before {
+  content: 'Enviar';
+}
+.perfil .maicol .hello .form .enviado:after {
+  content: 'Enviado';
+}
+.perfil .maicol .hello .form .enviado:before {
+  content: '\61';
+  font-family: 'icomoon';
+  color: #fff;
+  margin-right: 10px;
+}
+.perfil .maicol .blog {
+  margin-left: 57px;
+  float: left;
+  background: #61a18f;
+  margin-top: 15px;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 330px;
+}
+.perfil .maicol .blog img {
+  float: left;
+  margin-right: 15px;
+}
+.perfil .maicol .blog h2 {
+  color: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  padding: 15px;
+  font-size: 28px;
+}
+.perfil .maicol .blog p {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+.perfil .maicol .blog .redes {
+  background: #efeded;
+  padding: 15px;
+  text-align: center;
+}
+.perfil .maicol .blog .redes li {
+  display: inline-block;
+  color: #adadad;
+  font-size: 15px;
+  border-right: 1px solid #adadad;
+  padding: 0 15px;
+}
+.perfil .maicol .blog .redes li:last-child {
+  border-right: none;
+}
+.perfil .maicol .blog .redes li a {
+  font-family: 'icomoon';
+  color: #adadad;
+  padding: 10px;
+  font-size: 20px;
+}
+.clearfix {
+  clear: both;
+  display: block;
+}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -251,6 +541,62 @@ body {
     -webkit-transform: scale(0.8, 0.8);
     -moz-transform: scale(0.8, 0.8);
     -ms-transform: scale(0.8, 0.8);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #content .opened .line {
+    background: #558E7E;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 767px) {
+  #content .opened .line {
+    background: #558E7E;
+  }
+  #content .lines p {
+    font-size: 27px;
+  }
+  #content .works-btn {
+    top: 32px;
+    right: 32px;
+  }
+  .perfil .maicol .hello {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .perfil .maicol {
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+    padding: 0 10px;
+  }
+  .perfil .maicol .campo-slide,
+  .perfil .maicol .side-perfil,
+  .perfil .maicol .blog {
+    float: inherit;
+  }
+  .perfil .maicol .campo-slide .slider,
+  .perfil .maicol .side-perfil,
+  .perfil .maicol .blog,
+  .perfil .maicol .hello .form .btn-enviar,
+  .perfil .maicol .campo-slide .slider .banner,
+  .perfil .maicol .campo-slide .slider .banner img {
+    width: 100%;
+  }
+  .rsOverflow {
+    width: 100%!important;
+  }
+  .perfil .maicol .side-perfil .linha {
+    display: none;
+  }
+  .perfil .maicol .blog {
+    margin-left: 0;
+    margin-bottom: 50px;
+  }
+  .perfil .maicol .blog .redes li a {
+    padding: 3px;
+  }
+  .perfil .maicol .blog .redes li {
+    padding: 0 10px;
   }
 }
 /* ==========================================================================
