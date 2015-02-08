@@ -95,19 +95,6 @@ li {
 }
 a {
   text-decoration: none;
-  -webkit-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  -moz-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  -ms-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  -o-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-  /* easeOutExpo */
-  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  -moz-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  -ms-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  /* easeOutExpo */
-  outline: none;
 }
 a.full {
   width: 100%;
@@ -120,6 +107,7 @@ li {
 }
 body {
   overflow: hidden;
+  height: 100vh;
 }
 *,
 *:before,
@@ -148,15 +136,15 @@ body {
 .icon {
   font-family: 'icomoon';
 }
-#content {
+.content {
   width: 100%;
-  height: 100vh;
-  display: table;
-  background: url(../img/bg.jpg) no-repeat center top;
+  height: 100%;
+  position: absolute;
+  background: url(../img/bg.jpg);
   background-size: cover;
   font-family: 'Oswald';
 }
-#content .works-btn {
+.content .works-btn {
   width: 40px;
   position: absolute;
   top: 100px;
@@ -164,7 +152,7 @@ body {
   cursor: pointer;
   z-index: 99999;
 }
-#content .works-btn .line {
+.content .works-btn .line {
   width: 100%;
   height: 5px;
   background: white;
@@ -175,28 +163,28 @@ body {
             &:nth-child(2) { .transitionDelay(0.2); }
             &:nth-child(3) { .transitionDelay(0.3); }*/
 }
-#content .works-btn .line.x-dir {
+.content .works-btn .line.x-dir {
   transform: rotateZ(45deg) !important;
   -webkit-transform: rotateZ(45deg) !important;
   top: 10px;
   position: relative;
 }
-#content .works-btn .line.x-esq {
+.content .works-btn .line.x-esq {
   transform: rotateZ(-45deg) !important;
   -webkit-transform: rotateZ(-45deg) !important;
   top: -10px;
   position: relative;
 }
-#content .works-btn:hover .line {
+.content .works-btn:hover .line {
   background: #999999;
 }
-#content .lines {
+.content .lines {
   width: 240px;
   position: absolute;
   top: 100px;
   left: 100px;
 }
-#content .lines p {
+.content .lines p {
   font-size: 38px;
   font-style: normal;
   font-weight: 700;
@@ -205,47 +193,47 @@ body {
   line-height: 44px;
   left: 0;
 }
-#content .lines p.cor {
+.content .lines p.cor {
   color: #ffcd40;
 }
-#content .info {
+.content .info {
   width: auto;
-  display: table;
+  display: block;
   position: absolute;
   bottom: 100px;
   left: 100px;
 }
-#content .info .link {
+.content .info .link {
   float: left;
   width: auto;
-  display: table;
+  display: block;
   margin-right: 10px;
   position: relative;
 }
-#content .info .link.fb,
-#content .info .link.git {
+.content .info .link.fb,
+.content .info .link.git {
   width: 36px;
   height: 37px;
 }
-#content .info .link.fb a,
-#content .info .link.git a {
+.content .info .link.fb a,
+.content .info .link.git a {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
-#content .info .link.git {
+.content .info .link.git {
   background: url(../img/git.png) no-repeat 0 0;
 }
-#content .info .link.fb {
+.content .info .link.fb {
   background: url(../img/fb.png) no-repeat 0 0;
 }
-#content .info .link.mail {
+.content .info .link.mail {
   width: 220px;
   margin: 7px 0 0 5px;
 }
-#content .info .link.mail .linec {
+.content .info .link.mail .linec {
   width: 0%;
   height: 1px;
   background: #ffcd40;
@@ -253,7 +241,7 @@ body {
   top: 11px;
   left: 0;
 }
-#content .info .link a {
+.content .info .link a {
   width: 100%;
   font-size: 16px;
   font-style: normal;
@@ -274,7 +262,7 @@ body {
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   /* easeOutExpo */
 }
-#content .info .link a:hover {
+.content .info .link a:hover {
   color: #cccccc;
 }
 .perfil {
@@ -530,11 +518,11 @@ body {
    Media Queries
    ========================================================================== */
 @media only screen and (max-width: 1024px) {
-  #content .lines {
+  .content .lines {
     top: 20px;
     left: 20px;
   }
-  #content .info {
+  .content .info {
     bottom: 20px;
     left: 0px;
     transform: scale(0.8, 0.8);
@@ -544,18 +532,18 @@ body {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  #content .opened .line {
+  .content .opened .line {
     background: #558E7E;
   }
 }
 @media screen and (min-width: 300px) and (max-width: 767px) {
-  #content .opened .line {
+  .content .opened .line {
     background: #558E7E;
   }
-  #content .lines p {
+  .content .lines p {
     font-size: 27px;
   }
-  #content .works-btn {
+  .content .works-btn {
     top: 32px;
     right: 32px;
   }
@@ -568,6 +556,7 @@ body {
     left: 0;
     margin-left: 0;
     padding: 0 10px;
+    margin-bottom: 0;
   }
   .perfil .maicol .campo-slide,
   .perfil .maicol .side-perfil,

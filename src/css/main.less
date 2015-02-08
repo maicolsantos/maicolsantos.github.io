@@ -111,11 +111,11 @@ textarea {
    ========================================================================== */
 
 h1, h2, h3, h4, h5, h6, p, ul, li { margin: 0; padding: 0; } 
-a { text-decoration: none; .easeoutexpo; outline: none; }
+a { text-decoration: none; }
 a.full { width: 100%; height: 100%; display: table; }
 ul, li { list-style-type: none; }
 
-body { overflow: hidden; }
+body { overflow: hidden;height: 100vh; }
 
 
 *, *:before, *:after { .border-box; }
@@ -139,11 +139,11 @@ body { overflow: hidden; }
     font-family: 'icomoon';
 }
 
-#content {
+.content {
     width: 100%;
-    height: 100vh;
-    display: table;
-    background: url(../img/bg.jpg) no-repeat center top;
+    height: 100%;
+    position: absolute;
+    background: url(../img/bg.jpg);
     background-size: cover;
     font-family: 'Oswald';
 
@@ -207,7 +207,7 @@ body { overflow: hidden; }
 
     .info {
         width: auto;
-        display: table;
+        display: block;
         position: absolute;
         bottom: 100px;
         left: 100px;
@@ -215,7 +215,7 @@ body { overflow: hidden; }
         .link {
             float: left;
             width: auto;
-            display: table;
+            display: block;
             margin-right: 10px;
             position: relative;
 
@@ -543,8 +543,8 @@ body { overflow: hidden; }
    ========================================================================== */
 
 @media only screen and (max-width: 1024px) {
-    #content .lines { top: 20px; left: 20px; }
-    #content .info { bottom: 20px; left: 0px; #transform > .scale(0.8, 0.8); }
+    .content .lines { top: 20px; left: 20px; }
+    .content .info { bottom: 20px; left: 0px; #transform > .scale(0.8, 0.8); }
 
 }
 
@@ -556,18 +556,18 @@ body { overflow: hidden; }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px){
-    #content .opened .line{
+    .content .opened .line{
         background: #558E7E;
     }
 }
 @media screen and (min-width: 300px) and (max-width: 767px){
-    #content .opened .line{
+    .content .opened .line{
         background: #558E7E;
     }
-    #content .lines p{
+    .content .lines p{
         font-size: 27px;
     }
-    #content .works-btn{
+    .content .works-btn{
         top: 32px;
         right: 32px;
     }
@@ -580,6 +580,7 @@ body { overflow: hidden; }
         left: 0;
         margin-left: 0;
         padding: 0 10px;
+        margin-bottom: 0;
     }
     .perfil .maicol .campo-slide,
     .perfil .maicol .side-perfil,
