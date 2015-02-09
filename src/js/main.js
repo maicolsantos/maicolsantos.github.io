@@ -205,7 +205,7 @@ $('document').ready(function () {
 
 		$.ajax({
 			type: "POST",
-			url: "envia.php",
+			url: "http://192.185.214.90/~wwwmaico/envia.php",
 			data: dados,
 			success: function( data )
 			{
