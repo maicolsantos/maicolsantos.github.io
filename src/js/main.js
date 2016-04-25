@@ -13,7 +13,7 @@ function App () {
 
 	this.animations();
 
-	console.log('%c \nThanks guys \nhttp://glaubersampaio.com/ \nhttp://pipa.digital', 'color: #171717');
+	console.log('%c \nThanks guys \nhttp://glaubersampaio.com/', 'color: #171717');
 
 }
 
@@ -23,7 +23,7 @@ App.prototype.Nodes = {
 
 	  // Settings
 	  density: 15,
-	  
+
 	  drawDistance: 0,
 	  baseRadius: 5,
 	  maxLineThickness: 4,
@@ -51,7 +51,7 @@ App.prototype.Nodes = {
 	  bgContextPixelData: null,
 
 	  init: function() {
-		    // Set up the visual canvas 
+		    // Set up the visual canvas
 		    this.canvas = document.getElementById( 'canvas' );
 		    this.context = canvas.getContext( '2d' );
 		    this.context.globalCompositeOperation = "lighter";
@@ -73,7 +73,7 @@ App.prototype.Nodes = {
 		    window.onresize = function(event) {
 		      App.Nodes.canvas.width = window.innerWidth;
 		      App.Nodes.canvas.height = window.innerHeight;
-		      App.Nodes.onWindowResize();    
+		      App.Nodes.onWindowResize();
 		    }
 
 		    // Load initial input image (the chrome logo!)
@@ -84,7 +84,7 @@ App.prototype.Nodes = {
 
 		    // Clear the current points
 		    this.points = [];
-		    
+
 		    var width, height, i, j;
 
 		    var colors = this.bgContextPixelData.data;
@@ -99,7 +99,7 @@ App.prototype.Nodes = {
 		        if ( colors[pixelPosition] > 200 && (colors[pixelPosition + 1]) > 200 && (colors[pixelPosition + 2]) > 200 || colors[pixelPosition + 3] === 0 ) {
 		          continue;
 		        }
-		        
+
 		        var color = 'rgba(' + colors[pixelPosition] + ',' + colors[pixelPosition + 1] + ',' + colors[pixelPosition + 2] + ',' + '1)';
 		        this.points.push( { x: j, y: i, originalX: j, originalY: i, color: color } );
 
@@ -111,7 +111,7 @@ App.prototype.Nodes = {
 	  updatePoints: function() {
 
 		    var i, currentPoint, theta, distance;
-		    
+
 		    for (i = 0; i < this.points.length; i++ ){
 
 		      currentPoint = this.points[i];
@@ -123,9 +123,9 @@ App.prototype.Nodes = {
 		         (this.mouse.y - currentPoint.y) * (this.mouse.y - currentPoint.y));
 		      } else {
 		        distance = this.reactionSensitivity * 100 / Math.sqrt((this.mouse.x - currentPoint.x) * (this.mouse.x - currentPoint.x) +
-		         (this.mouse.y - currentPoint.y) * (this.mouse.y - currentPoint.y));  
+		         (this.mouse.y - currentPoint.y) * (this.mouse.y - currentPoint.y));
 		      }
-		      
+
 
 		      currentPoint.x += Math.cos(theta) * distance + (currentPoint.originalX - currentPoint.x) * 0.05;
 		      currentPoint.y += Math.sin(theta) * distance + (currentPoint.originalY - currentPoint.y) * 0.05;
@@ -135,7 +135,7 @@ App.prototype.Nodes = {
 	  },
 
 	  drawLines: function() {
-	    
+
 		    var i, j, currentPoint, otherPoint, distance, lineThickness;
 
 		    for ( i = 0; i < this.points.length; i++ ) {
@@ -193,7 +193,7 @@ App.prototype.Nodes = {
 	  },
 
 	  draw: function() {
-		   
+
 		    this.animation = requestAnimationFrame( function(){ App.Nodes.draw() } );
 
 		    this.clear();
@@ -211,7 +211,7 @@ App.prototype.Nodes = {
 
 	  // The filereader has loaded the image... add it to image object to be drawn
 	  loadData: function( data ) {
-		    
+
 		    this.bgImage = new Image;
 		    this.bgImage.src = data;
 
@@ -261,12 +261,12 @@ App.prototype.Nodes = {
 	  mouseUp: function( event ){
 	    App.Nodes.mouse.down = false;
 	  },
-	  
+
 	  mouseMove: function(event){
 	    App.Nodes.mouse.x = event.offsetX || (event.layerX - App.Nodes.canvas.offsetLeft);
 	    App.Nodes.mouse.y = event.offsetY || (event.layerY - App.Nodes.canvas.offsetTop);
 	  },
-	  
+
 	  mouseOut: function(event){
 	    App.Nodes.mouse.x = -1000;
 	    App.Nodes.mouse.y = -1000;
@@ -284,7 +284,7 @@ App.prototype.Nodes = {
 App.prototype.animations = function(){
 
 	TweenLite.defaultEase = Expo.easeOut;
-	
+
 	var sign = document.querySelector('.sign'),
 		signH1 = sign.querySelector('h1'),
 		signSpan = sign.querySelector('span'),
