@@ -5,5 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: black;
+  /* background: black; */
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
 }
