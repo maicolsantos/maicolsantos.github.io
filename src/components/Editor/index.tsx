@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import Editor, { useMonaco } from '@monaco-editor/react'
 
 import { Loading } from '../Loading'
+import { Footer } from '../Footer'
+import { code as codeSample } from '../../code'
 
 interface EditorProps {
   code: string
@@ -13,7 +15,7 @@ const START_SLICE = 0
 const EDITOR_HEIGHT = '100vh'
 const EDITOR_LANGUAGE = 'typescript'
 const EDITOR_FONT_SIZE = 16
-const EDITOR_DEFAULT_VALUE = '// Just write your code here'
+const EDITOR_DEFAULT_VALUE = '// Just write something'
 
 const perserveSpaces = (code: string) => (
   code.split(' ').join('\u00a0').split('\t').join('\u00a0'.repeat(4))
@@ -21,6 +23,7 @@ const perserveSpaces = (code: string) => (
 
 export const EditorProgrammer = ({ code, numberOfLetters }: EditorProps) => {
   const [ loading, setLoading ] = useState(true)
+  const [ showFooter, setShowFooter ] = useState(false)
   const monaco = useMonaco()
   const parsedCode = perserveSpaces(code.slice(START_SLICE, numberOfLetters))
 
@@ -30,11 +33,26 @@ export const EditorProgrammer = ({ code, numberOfLetters }: EditorProps) => {
     }, TIMEOUT)
   }
 
+  const showFooterWhenFinishedTyping = () => {
+    if (JSON.stringify(parsedCode).length === JSON.stringify(codeSample).length) {
+      setShowFooter(true)
+    }
+  }
+
+  useEffect(() => {
+    showFooterWhenFinishedTyping()
+  }, [parsedCode])
+
   useEffect(() => {
     if (monaco) {
       import('monaco-themes/themes/Monokai.json')
-        .then((data) => { monaco.editor.defineTheme('monokai', data) })
+        .then((data: any) => monaco.editor.defineTheme('monokai', data))
         .then(() => monaco.editor.setTheme('monokai'))
+
+      monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
+        noSemanticValidation: true,
+        noSyntaxValidation: true,
+      })
     }
   }, [monaco])
 
@@ -50,7 +68,7 @@ export const EditorProgrammer = ({ code, numberOfLetters }: EditorProps) => {
       />
       { loading && <Loading /> }
       <div className="keydown-view" />
+      { showFooter && <Footer /> }
     </>
   )
 }
-
