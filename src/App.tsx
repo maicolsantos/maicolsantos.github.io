@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import { EditorProgrammer } from './components/Editor'
 import { code } from './code'
-import logo  from './assets/images/logo.svg'
-import './App.css'
-
-import { Editor } from './components/Editor'
 
 export const App = () => {
   const [ sizeOfText, setSizeOfText ] = useState(0)
@@ -23,18 +20,13 @@ export const App = () => {
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown)
+
     return () => {
       document.removeEventListener('keydown', handleKeyDown)
     }
   }, [ sizeOfText ])
 
   return (
-    <Editor text={code} numberOfLetters={sizeOfText} />
-    // <div className="app">
-    //   <div className="app-logo">
-    //     <img src={logo} className="logo" alt="Maicol logo" />
-    //     <h1 className="title">Maicol Santos</h1>
-    //   </div>
-    // </div>
+    <EditorProgrammer code={code} numberOfLetters={sizeOfText} />
   )
 }
