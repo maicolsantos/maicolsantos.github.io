@@ -67,7 +67,7 @@ export const EditorProgrammer = ({ code, numberOfLetters }: EditorProps) => {
         value={parsedCode}
       />
       { loading && <Loading /> }
-      <div className="keydown-view" />
+      { !showFooter && <div className="keydown-view" /> }
       { showFooter && <Footer /> }
     </>
   )
