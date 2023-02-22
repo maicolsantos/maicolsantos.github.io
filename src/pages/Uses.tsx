@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Editor, { useMonaco } from '@monaco-editor/react'
 
 import { uses } from '../uses'
+import { Footer } from '../components/Footer'
 
 const EDITOR_HEIGHT = '100vh'
 const EDITOR_LANGUAGE = 'markdown'
@@ -24,12 +25,15 @@ export const Uses = () => {
   }, [monaco])
 
   return (
-    <Editor
-      theme="monokai"
-      height={EDITOR_HEIGHT}
-      defaultLanguage={EDITOR_LANGUAGE}
-      options={{ fontSize: EDITOR_FONT_SIZE }}
-      value={parsedCode}
-    />
+    <>
+      <Editor
+        theme="monokai"
+        height={EDITOR_HEIGHT}
+        defaultLanguage={EDITOR_LANGUAGE}
+        options={{ fontSize: EDITOR_FONT_SIZE }}
+        value={parsedCode}
+      />
+      <Footer show />
+    </>
   )
 }
