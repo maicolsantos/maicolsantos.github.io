@@ -17,7 +17,7 @@ const EDITOR_LANGUAGE = 'typescript'
 const EDITOR_FONT_SIZE = 16
 const EDITOR_DEFAULT_VALUE = '// Just write something'
 
-const perserveSpaces = (code: string) => (
+const preserveSpaces = (code: string) => (
   code.split(' ').join('\u00a0').split('\t').join('\u00a0'.repeat(4))
 )
 
@@ -25,7 +25,7 @@ export const EditorProgrammer = ({ code, numberOfLetters }: EditorProps) => {
   const [ loading, setLoading ] = useState(true)
   const [ showFooter, setShowFooter ] = useState(false)
   const monaco = useMonaco()
-  const parsedCode = perserveSpaces(code.slice(START_SLICE, numberOfLetters))
+  const parsedCode = preserveSpaces(code.slice(START_SLICE, numberOfLetters))
 
   const hiddenLoadingByTiming = () => {
     setTimeout(() => {

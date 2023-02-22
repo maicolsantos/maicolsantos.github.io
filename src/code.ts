@@ -2,6 +2,7 @@ const name = '${name}'
 const email = '${email}'
 const github = '${github}'
 const linkedin = '${linkedin}'
+const uses = '${uses}'
 const template = '`'
 
 export const code  = `import whoIam from 'maicol-santos'
@@ -11,7 +12,8 @@ function getFullInfo() {
     name,
     email,
     github,
-    linkedin
+    linkedin,
+    uses,
   } = whoIam()
 
   return ${template}
@@ -19,6 +21,7 @@ function getFullInfo() {
     <a href="mailto:${email}">${email}</a>
     <a href="${github}>${github}</a>
     <a href="${linkedin}">${linkedin}</a>
+    <a href="${uses}">${uses}</a>
   ${template}
 }
 

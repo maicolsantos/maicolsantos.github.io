@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import './styles.css'
 
@@ -21,6 +22,7 @@ export const Footer = () => {
         <a href="mailto:maicolcostaa8@gmail.com">maicolcostaa8@gmail.com</a>
         <a href="https://github.com/maicolsantos" target="_blank">github</a>
         <a href="https://www.linkedin.com/in/maicolsantos" target="_blank">linkedin</a>
+        <Link to="/uses">/uses</Link>
       </div>
     </footer>
   )
