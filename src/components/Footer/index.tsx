@@ -6,8 +6,8 @@ import './styles.css'
 const TIMEOUT = 500 // 0.5s
 
 
-export const Footer = () => {
-  const [ showInfo, setShowInfo ] = useState(false)
+export const Footer = ({ show = false }: { show?: boolean }) => {
+  const [ showInfo, setShowInfo ] = useState(show)
 
   useEffect(() => {
     setTimeout(() => {
