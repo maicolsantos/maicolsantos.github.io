@@ -24,11 +24,12 @@ export const Uses = () => {
   }, [monaco])
 
   return (
-  <Editor
+    <Editor
+      theme="monokai"
       height={EDITOR_HEIGHT}
       defaultLanguage={EDITOR_LANGUAGE}
       options={{ fontSize: EDITOR_FONT_SIZE }}
       value={parsedCode}
     />
-)
-  }
+  )
+}
