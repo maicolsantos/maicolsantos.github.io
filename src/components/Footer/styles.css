@@ -8,9 +8,9 @@
 }
 
 .footer-relative {
+  padding: 0 !important;
   position: relative !important;
   bottom: inherit !important;
-  padding: 0 !important;
 }
 
 .footer-container {
