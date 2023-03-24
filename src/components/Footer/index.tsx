@@ -6,7 +6,7 @@ import './styles.css'
 const TIMEOUT = 500 // 0.5s
 
 
-export const Footer = ({ show = false }: { show?: boolean }) => {
+export const Footer = ({ show = false, hiddenTitle = false }: { show?: boolean, hiddenTitle?: boolean }) => {
   const [ showInfo, setShowInfo ] = useState(show)
 
   useEffect(() => {
@@ -16,9 +16,9 @@ export const Footer = ({ show = false }: { show?: boolean }) => {
   }, [])
 
   return (
-    <footer className="footer">
+    <footer className={`footer ${hiddenTitle ? 'footer-relative' : ''}`}>
       <div className={`footer-container ${showInfo ? 'active' : ''}`}>
-        <h1>Maicol Santos</h1>
+        { !hiddenTitle && <h1>Maicol Santos</h1> }
         <a href="mailto:maicolcostaa8@gmail.com">maicolcostaa8@gmail.com</a>
         <a href="https://github.com/maicolsantos" target="_blank">github</a>
         <a href="https://www.linkedin.com/in/maicolsantos" target="_blank">linkedin</a>

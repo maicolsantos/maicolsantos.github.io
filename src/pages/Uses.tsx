@@ -3,6 +3,7 @@ import Editor, { useMonaco } from '@monaco-editor/react'
 
 import { uses } from '../uses'
 import { Footer } from '../components/Footer'
+import { BrowserView } from 'react-device-detect'
 
 const EDITOR_HEIGHT = '100vh'
 const EDITOR_LANGUAGE = 'markdown'
@@ -33,7 +34,9 @@ export const Uses = () => {
         options={{ fontSize: EDITOR_FONT_SIZE }}
         value={parsedCode}
       />
-      <Footer show />
+      <BrowserView>
+        <Footer show />
+      </BrowserView>
     </>
   )
 }

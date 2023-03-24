@@ -1,0 +1,20 @@
+.mobile {
+  background-color: #272822;
+  min-height: 100vh;
+  padding: 16vh 24px 24px;
+}
+
+.mobile-logo {
+  width: 60px;
+  margin-bottom: 32px;
+}
+
+.mobile-title {
+  line-height: 4rem;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #fff;
+  font-family: 'Signika Negative', sans-serif;
+  margin: 0 0 32px;
+  letter-spacing: -2px;
+}

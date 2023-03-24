@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { BrowserView, MobileView, isMobile } from 'react-device-detect'
 
-import { Loading as SplashScreen } from '../components/Loading'
 import { EditorProgrammer } from '../components/Editor'
 import { code } from '../code'
+import { MobileHome } from '../components/MobileHome'
 
 export const Home = () => {
   const [ sizeOfText, setSizeOfText ] = useState(0)
@@ -33,7 +33,7 @@ export const Home = () => {
   return (
     <>
       <MobileView>
-        <SplashScreen />
+        <MobileHome />
       </MobileView>
       <BrowserView>
         <EditorProgrammer code={code} numberOfLetters={sizeOfText} />

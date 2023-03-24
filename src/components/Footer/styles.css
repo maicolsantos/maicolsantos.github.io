@@ -7,11 +7,13 @@
   z-index: 999;
 }
 
+.footer-relative {
+  position: relative !important;
+  bottom: inherit !important;
+  padding: 0 !important;
+}
+
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 600px;
   width: 100%;
   margin: 0 auto;
   opacity: 0;
@@ -38,8 +40,24 @@
   transition: color 0.3s;
   font-family: 'Inconsolata', monospace;
   font-weight: 700;
+  display: block;
+  padding: 8px 0
 }
 
 .footer a:hover {
   color: #e6db74;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+  }
+
+  .footer a {
+    display: inline-block;
+    padding: 0;
+  }
 }
